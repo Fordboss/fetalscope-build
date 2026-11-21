@@ -281,7 +281,8 @@
         }
     };
     if (@available(iOS 17.0, *)) {
-        [AVAudioApplication requestRecordPermission:handler];
+        // iOS 17+ 的新 API：注意 selector 带 WithCompletionHandler 后缀
+        [AVAudioApplication requestRecordPermissionWithCompletionHandler:handler];
     } else {
         [AVAudioSession.sharedInstance requestRecordPermission:handler];
     }

@@ -215,8 +215,10 @@ static inline float HPProcess(HighPass *hp, float x) {
 - (BOOL)configureSession:(NSError **)error {
     AVAudioSession *s = AVAudioSession.sharedInstance;
 
+    // AllowBluetooth 在 iOS 8 起就有了，新 SDK 会提示用 AllowBluetoothHFP 替代，
+    // 但后者需要 iOS 13+，而我们的最低目标是 iOS 15，所以直接用新名字更干净。
     AVAudioSessionCategoryOptions baseOpts = AVAudioSessionCategoryOptionAllowBluetoothA2DP
-                                           | AVAudioSessionCategoryOptionAllowBluetooth;
+                                           | AVAudioSessionCategoryOptionAllowBluetoothHFP;
 
     struct { AVAudioSessionCategory cat; AVAudioSessionMode mode;
              AVAudioSessionCategoryOptions opts; NSString *desc; } tries[] = {
@@ -321,7 +323,7 @@ static inline float HPProcess(HighPass *hp, float x) {
         RawMicEngine *s = weakSelf;
         if (!s) return;
 
-        const float *const *ch = buf.floatChannelData;
+        float *const *ch = buf.floatChannelData;
         AVAudioFrameCount n = buf.frameLength;
         if (!ch || n == 0) return;
 
