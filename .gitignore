@@ -1,2 +1,3 @@
 build_log.txt
 build/
+build_log*.txt
