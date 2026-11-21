@@ -1,0 +1,360 @@
+﻿2026-11-21T14:58:22.0052540Z Current runner version: '2.338.2'
+2026-11-21T14:58:22.0070150Z ##[group]Runner Image Provisioner
+2026-11-21T14:58:22.0070670Z Hosted Compute Agent
+2026-11-21T14:58:22.0071040Z Version: 20261111.635
+2026-11-21T14:58:22.0071430Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-21T14:58:22.0071890Z Build Date: 2026-11-11T01:49:01Z
+2026-11-21T14:58:22.0072390Z Worker ID: {7da4ee06-3801-44ce-b484-6ca4c07c7968}
+2026-11-21T14:58:22.0072870Z Region: westus
+2026-11-21T14:58:22.0073210Z Cloud: MacCloud
+2026-11-21T14:58:22.0073550Z ##[endgroup]
+2026-11-21T14:58:22.0074440Z ##[group]Operating System
+2026-11-21T14:58:22.0074850Z macOS
+2026-11-21T14:58:22.0075180Z 26.7.2
+2026-11-21T14:58:22.0075510Z 25G332
+2026-11-21T14:58:22.0075860Z ##[endgroup]
+2026-11-21T14:58:22.0076220Z ##[group]Runner Image
+2026-11-21T14:58:22.0076630Z Image: macos-26-arm64
+2026-11-21T14:58:22.0077060Z Version: 20261117.0516.1
+2026-11-21T14:58:22.0077890Z Included Software: https://github.com/actions/runner-images/blob/macos-26-arm64/20261117.0516/images/macos/macos-26-arm64-Readme.md
+2026-11-21T14:58:22.0078990Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-26-arm64%2F20261117.0516
+2026-11-21T14:58:22.0079800Z ##[endgroup]
+2026-11-21T14:58:22.0080650Z ##[group]GITHUB_TOKEN Permissions
+2026-11-21T14:58:22.0081930Z Contents: read
+2026-11-21T14:58:22.0082530Z Metadata: read
+2026-11-21T14:58:22.0082900Z Packages: read
+2026-11-21T14:58:22.0083280Z ##[endgroup]
+2026-11-21T14:58:22.0084920Z Secret source: Actions
+2026-11-21T14:58:22.0085530Z Cache mode: write
+2026-11-21T14:58:22.0086040Z Prepare workflow directory
+2026-11-21T14:58:22.0309450Z Prepare all required actions
+2026-11-21T14:58:22.0342230Z Getting action download info
+2026-11-21T14:58:22.1601410Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-21T14:58:22.4220680Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-21T14:58:22.6476440Z Complete job name: build
+2026-11-21T14:58:22.7024870Z ##[group]Run actions/checkout@v4
+2026-11-21T14:58:22.7025430Z with:
+2026-11-21T14:58:22.7025790Z   repository: Fordboss/fetalscope-build
+2026-11-21T14:58:22.7028410Z   token: ***
+2026-11-21T14:58:22.7028720Z   ssh-strict: true
+2026-11-21T14:58:22.7029040Z   ssh-user: git
+2026-11-21T14:58:22.7029370Z   persist-credentials: true
+2026-11-21T14:58:22.7029720Z   clean: true
+2026-11-21T14:58:22.7030050Z   sparse-checkout-cone-mode: true
+2026-11-21T14:58:22.7030430Z   fetch-depth: 1
+2026-11-21T14:58:22.7030740Z   fetch-tags: false
+2026-11-21T14:58:22.7031070Z   show-progress: true
+2026-11-21T14:58:22.7031400Z   lfs: false
+2026-11-21T14:58:22.7031700Z   submodules: false
+2026-11-21T14:58:22.7032030Z   set-safe-directory: true
+2026-11-21T14:58:22.7032410Z   allow-unsafe-pr-checkout: false
+2026-11-21T14:58:22.7032920Z ##[endgroup]
+2026-11-21T14:58:23.2589420Z Syncing repository: Fordboss/fetalscope-build
+2026-11-21T14:58:23.2591290Z ##[group]Getting Git version info
+2026-11-21T14:58:23.2592130Z Working directory is '/Users/runner/work/fetalscope-build/fetalscope-build'
+2026-11-21T14:58:23.2593030Z [command]/opt/homebrew/bin/git version
+2026-11-21T14:58:23.3629180Z git version 2.56.1
+2026-11-21T14:58:23.3667200Z ##[endgroup]
+2026-11-21T14:58:23.3684830Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/5d7eec02-e406-4a5f-b2b6-961c1498844c/.gitconfig'
+2026-11-21T14:58:23.3696130Z Temporarily overriding HOME='/Users/runner/work/_temp/5d7eec02-e406-4a5f-b2b6-961c1498844c' before making global git config changes
+2026-11-21T14:58:23.3697470Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T14:58:23.3702350Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:23.3807310Z Deleting the contents of '/Users/runner/work/fetalscope-build/fetalscope-build'
+2026-11-21T14:58:23.3809470Z ##[group]Initializing the repository
+2026-11-21T14:58:23.3813900Z [command]/opt/homebrew/bin/git init /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:23.4008440Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-21T14:58:23.4009410Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-21T14:58:23.4010240Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-21T14:58:23.4010960Z hint: call:
+2026-11-21T14:58:23.4011360Z hint:
+2026-11-21T14:58:23.4011850Z hint: 	git config --global init.defaultBranch <name>
+2026-11-21T14:58:23.4012470Z hint:
+2026-11-21T14:58:23.4012970Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-21T14:58:23.4013910Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-21T14:58:23.4014660Z hint:
+2026-11-21T14:58:23.4015020Z hint: 	git branch -m <name>
+2026-11-21T14:58:23.4015600Z hint:
+2026-11-21T14:58:23.4016220Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-21T14:58:23.4017200Z Initialized empty Git repository in /Users/runner/work/fetalscope-build/fetalscope-build/.git/
+2026-11-21T14:58:23.4022180Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Fordboss/fetalscope-build
+2026-11-21T14:58:23.4104050Z ##[endgroup]
+2026-11-21T14:58:23.4105040Z ##[group]Disabling automatic garbage collection
+2026-11-21T14:58:23.4106200Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-11-21T14:58:23.4177990Z ##[endgroup]
+2026-11-21T14:58:23.4179940Z ##[group]Setting up auth
+2026-11-21T14:58:23.4181770Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T14:58:23.4282420Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T14:58:23.5473460Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-21T14:58:23.5544290Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-21T14:58:23.6594890Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T14:58:23.6726560Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T14:58:23.7790430Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-21T14:58:23.7804280Z ##[endgroup]
+2026-11-21T14:58:23.7809180Z ##[group]Fetching the repository
+2026-11-21T14:58:23.7813040Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +632361c16d6a2d116f3c36ebed05eb8df3a9932f:refs/remotes/origin/main
+2026-11-21T14:58:24.3939480Z From https://github.com/Fordboss/fetalscope-build
+2026-11-21T14:58:24.3940410Z  * [new ref]         632361c16d6a2d116f3c36ebed05eb8df3a9932f -> origin/main
+2026-11-21T14:58:24.3943240Z ##[endgroup]
+2026-11-21T14:58:24.3943670Z ##[group]Determining the checkout info
+2026-11-21T14:58:24.3946140Z ##[endgroup]
+2026-11-21T14:58:24.3955660Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-11-21T14:58:24.4048460Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-21T14:58:24.4125630Z ##[group]Checking out the ref
+2026-11-21T14:58:24.4134020Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-21T14:58:24.4290980Z Switched to a new branch 'main'
+2026-11-21T14:58:24.4295050Z branch 'main' set up to track 'origin/main'.
+2026-11-21T14:58:24.4298000Z ##[endgroup]
+2026-11-21T14:58:24.4394320Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-11-21T14:58:24.4472280Z 632361c16d6a2d116f3c36ebed05eb8df3a9932f
+2026-11-21T14:58:24.4642530Z ##[group]Run brew install xcodegen
+2026-11-21T14:58:24.4642910Z [36;1mbrew install xcodegen[0m
+2026-11-21T14:58:24.4680800Z shell: /bin/bash -e {0}
+2026-11-21T14:58:24.4681050Z ##[endgroup]
+2026-11-21T14:58:27.5166790Z [32m==>[0m [1mDownloading bottle manifests[0m
+2026-11-21T14:58:27.5233280Z ✔︎ Bottle Manifest xcodegen (2.46.0)
+2026-11-21T14:58:27.5251210Z [32m==>[0m [1mFetching downloads for: [32mxcodegen[39m[0m
+2026-11-21T14:58:29.3427650Z ✔︎ Bottle xcodegen (2.46.0)
+2026-11-21T14:58:29.3973960Z [34m==>[0m [1mPouring xcodegen--2.46.0.arm64_tahoe.bottle.1.tar.gz[0m
+2026-11-21T14:58:30.4794570Z 🍺  /opt/homebrew/Cellar/xcodegen/2.46.0: 38 files, 7.4MB
+2026-11-21T14:58:30.5145840Z ##[group]Run xcodegen generate --spec project.yml
+2026-11-21T14:58:30.5146540Z [36;1mxcodegen generate --spec project.yml[0m
+2026-11-21T14:58:30.5194620Z shell: /bin/bash -e {0}
+2026-11-21T14:58:30.5194860Z ##[endgroup]
+2026-11-21T14:58:30.6077100Z ⚙️  Generating plists...
+2026-11-21T14:58:30.6077820Z ⚙️  Generating project...
+2026-11-21T14:58:30.6186430Z ⚙️  Writing project...
+2026-11-21T14:58:30.6258900Z Created project at /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:30.6367100Z ##[group]Run xcodebuild clean archive \
+2026-11-21T14:58:30.6368020Z [36;1mxcodebuild clean archive \[0m
+2026-11-21T14:58:30.6368790Z [36;1m  -project FetalScope.xcodeproj \[0m
+2026-11-21T14:58:30.6369910Z [36;1m  -scheme FetalScope \[0m
+2026-11-21T14:58:30.6370610Z [36;1m  -configuration Release \[0m
+2026-11-21T14:58:30.6371440Z [36;1m  -destination 'generic/platform=iOS' \[0m
+2026-11-21T14:58:30.6372380Z [36;1m  -archivePath "$PWD/build/FetalScope.xcarchive" \[0m
+2026-11-21T14:58:30.6373210Z [36;1m  CODE_SIGNING_ALLOWED=NO \[0m
+2026-11-21T14:58:30.6374020Z [36;1m  CLANG_ENABLE_MODULES=NO \[0m
+2026-11-21T14:58:30.6375120Z [36;1m  OTHER_LDFLAGS='-framework AudioToolbox -framework AVFoundation -framework Foundation -framework UIKit'[0m
+2026-11-21T14:58:30.6504040Z shell: /bin/bash -e {0}
+2026-11-21T14:58:30.6504280Z ##[endgroup]
+2026-11-21T14:58:32.0956050Z Command line invocation:
+2026-11-21T14:58:32.0991660Z     /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild clean archive -project FetalScope.xcodeproj -scheme FetalScope -configuration Release -destination generic/platform=iOS -archivePath /Users/runner/work/fetalscope-build/fetalscope-build/build/FetalScope.xcarchive CODE_SIGNING_ALLOWED=NO CLANG_ENABLE_MODULES=NO "OTHER_LDFLAGS=-framework AudioToolbox -framework AVFoundation -framework Foundation -framework UIKit"
+2026-11-21T14:58:32.0996090Z 
+2026-11-21T14:58:32.0996660Z Build settings from command line:
+2026-11-21T14:58:32.0997780Z     CLANG_ENABLE_MODULES = NO
+2026-11-21T14:58:32.1030640Z     CODE_SIGNING_ALLOWED = NO
+2026-11-21T14:58:32.1031650Z     OTHER_LDFLAGS = -framework AudioToolbox -framework AVFoundation -framework Foundation -framework UIKit
+2026-11-21T14:58:32.1032110Z 
+2026-11-21T14:58:35.2939920Z 2026-11-21 14:58:35.293 xcodebuild[1736:8577] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+2026-11-21T14:58:36.7814690Z CreateBuildRequest
+2026-11-21T14:58:36.7815170Z 
+2026-11-21T14:58:36.7816140Z SendProjectDescription
+2026-11-21T14:58:36.8054350Z 
+2026-11-21T14:58:36.8054980Z CreateBuildOperation
+2026-11-21T14:58:36.8117110Z 
+2026-11-21T14:58:36.9130220Z ** CLEAN SUCCEEDED **
+2026-11-21T14:58:36.9132700Z 
+2026-11-21T14:58:37.0443450Z ComputePackagePrebuildTargetDependencyGraph
+2026-11-21T14:58:37.0565940Z 
+2026-11-21T14:58:37.0586670Z Prepare packages
+2026-11-21T14:58:37.0590980Z 
+2026-11-21T14:58:37.0692490Z CreateBuildRequest
+2026-11-21T14:58:37.0695700Z 
+2026-11-21T14:58:37.0696350Z SendProjectDescription
+2026-11-21T14:58:37.0810120Z 
+2026-11-21T14:58:37.0810830Z CreateBuildOperation
+2026-11-21T14:58:37.0839400Z 
+2026-11-21T14:58:37.0858640Z ComputeTargetDependencyGraph
+2026-11-21T14:58:37.1005960Z note: Building targets in dependency order
+2026-11-21T14:58:37.1180250Z note: Target dependency graph (1 target)
+2026-11-21T14:58:37.1180740Z     Target 'FetalScope' in project 'FetalScope' (no dependencies)
+2026-11-21T14:58:37.1181250Z 
+2026-11-21T14:58:37.1181420Z GatherProvisioningInputs
+2026-11-21T14:58:37.1181600Z 
+2026-11-21T14:58:37.1216390Z CreateBuildDescription
+2026-11-21T14:58:37.1422490Z 
+2026-11-21T14:58:37.1423960Z ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x objective-c -c /dev/null
+2026-11-21T14:58:37.5484150Z 
+2026-11-21T14:58:37.5488110Z ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+2026-11-21T14:58:37.5489270Z 
+2026-11-21T14:58:37.5541400Z ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+2026-11-21T14:58:37.5776710Z 
+2026-11-21T14:58:37.5814790Z ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+2026-11-21T14:58:37.9678740Z 
+2026-11-21T14:58:37.9945740Z Build description signature: 3b3e3d9befeb0eabd3eb7530ee996738
+2026-11-21T14:58:37.9999260Z Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/XCBuildData/3b3e3d9befeb0eabd3eb7530ee996738.xcbuilddata
+2026-11-21T14:58:38.0539170Z CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath
+2026-11-21T14:58:38.0642590Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:38.0754590Z     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath
+2026-11-21T14:58:38.0873850Z 
+2026-11-21T14:58:38.0979930Z CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation
+2026-11-21T14:58:38.1083270Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:38.1266100Z     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation
+2026-11-21T14:58:38.1354660Z 
+2026-11-21T14:58:38.1359760Z CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath
+2026-11-21T14:58:38.1371470Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:38.1373010Z     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath
+2026-11-21T14:58:38.1374110Z 
+2026-11-21T14:58:38.1376700Z ClangStatCache /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
+2026-11-21T14:58:38.1379810Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:38.1382760Z     /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
+2026-11-21T14:58:41.3460800Z 
+2026-11-21T14:58:41.3467870Z CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos
+2026-11-21T14:58:41.3471180Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:41.3472500Z     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos
+2026-11-21T14:58:41.3474000Z 
+2026-11-21T14:58:41.3474790Z CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/SwiftExplicitPrecompiledModules
+2026-11-21T14:58:41.3475890Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:41.3476970Z     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/SwiftExplicitPrecompiledModules
+2026-11-21T14:58:41.3477850Z 
+2026-11-21T14:58:41.3481310Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope-25a0012bbde73ac4112d4ccbcb222136-VFS-iphoneos/all-product-headers.yaml
+2026-11-21T14:58:41.3487280Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:41.3515680Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope-25a0012bbde73ac4112d4ccbcb222136-VFS-iphoneos/all-product-headers.yaml
+2026-11-21T14:58:41.3517900Z 
+2026-11-21T14:58:41.3519900Z CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/ExplicitPrecompiledModules
+2026-11-21T14:58:41.3526440Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:41.3529240Z     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/ExplicitPrecompiledModules
+2026-11-21T14:58:41.3530750Z 
+2026-11-21T14:58:41.3531870Z CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/EagerLinkingTBDs/Release-iphoneos
+2026-11-21T14:58:41.3535710Z     cd /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj
+2026-11-21T14:58:41.3537160Z     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/EagerLinkingTBDs/Release-iphoneos
+2026-11-21T14:58:41.3544540Z 
+2026-11-21T14:58:41.3551070Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3556400Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3562410Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+2026-11-21T14:58:41.3596380Z '-std=gnu11' -fobjc-arc -fobjc-weak -fpascal-strings -Os -fno-common '-DNS_BLOCK_ASSERTIONS=1' '-DOBJC_OLD_DISPATCH_PROTOTYPES=0' -g '-fvisibility=hidden' -iquote /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-generated-files.hmap -I/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-own-target-headers.hmap -I/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-all-target-headers.hmap -iquote /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-project-headers.hmap -I/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos/include -I/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/DerivedSources-normal/arm64 -I/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/DerivedSources/arm64 -I/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/DerivedSources -F/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos
+2026-11-21T14:58:41.3647100Z 
+2026-11-21T14:58:41.3648210Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/FetalScope.LinkFileList (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3649910Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3651640Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/FetalScope.LinkFileList
+2026-11-21T14:58:41.3652710Z 
+2026-11-21T14:58:41.3654140Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope.hmap (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3656270Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3657290Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope.hmap
+2026-11-21T14:58:41.3658220Z 
+2026-11-21T14:58:41.3659370Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope.DependencyStaticMetadataFileList (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3661210Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3662660Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope.DependencyStaticMetadataFileList
+2026-11-21T14:58:41.3663860Z 
+2026-11-21T14:58:41.3665090Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope.DependencyMetadataFileList (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3667050Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3668210Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope.DependencyMetadataFileList
+2026-11-21T14:58:41.3669540Z 
+2026-11-21T14:58:41.3670870Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-project-headers.hmap (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3672900Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3674180Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-project-headers.hmap
+2026-11-21T14:58:41.3675610Z 
+2026-11-21T14:58:41.3676910Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-own-target-headers.hmap (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3678410Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3679480Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-own-target-headers.hmap
+2026-11-21T14:58:41.3680520Z 
+2026-11-21T14:58:41.3681580Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-generated-files.hmap (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3683860Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3685070Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-generated-files.hmap
+2026-11-21T14:58:41.3717860Z 
+2026-11-21T14:58:41.3721050Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-all-target-headers.hmap (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3724590Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3729590Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-all-target-headers.hmap
+2026-11-21T14:58:41.3730910Z 
+2026-11-21T14:58:41.3732060Z WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-all-non-framework-target-headers.hmap (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3733390Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3734580Z     write-file /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/FetalScope-all-non-framework-target-headers.hmap
+2026-11-21T14:58:41.3735620Z 
+2026-11-21T14:58:41.3736600Z SymLink /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos/FetalScope.app ../../InstallationBuildProductsLocation/Applications/FetalScope.app (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3737970Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3766640Z     /bin/ln -sfh ../../InstallationBuildProductsLocation/Applications/FetalScope.app /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos/FetalScope.app
+2026-11-21T14:58:41.3767680Z 
+2026-11-21T14:58:41.3768550Z MkDir /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3771880Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3776000Z     /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app
+2026-11-21T14:58:41.3778290Z 
+2026-11-21T14:58:41.3781530Z ProcessInfoPlistFile /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app/Info.plist /Users/runner/work/fetalscope-build/fetalscope-build/App/Info.plist (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3785700Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.3793480Z     builtin-infoPlistUtility /Users/runner/work/fetalscope-build/fetalscope-build/App/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -requiredArchitecture arm64 -o /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app/Info.plist
+2026-11-21T14:58:41.3799950Z 
+2026-11-21T14:58:41.3857670Z CompileC /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/main.o /Users/runner/work/fetalscope-build/fetalscope-build/App/main.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:41.3967840Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:41.4020460Z     
+2026-11-21T14:58:41.4023990Z     Using response file: /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+2026-11-21T14:58:41.4031580Z     
+2026-11-21T14:58:41.4056520Z     /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios15.0 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/main.d --serialize-diagnostics /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/main.dia -c /Users/runner/work/fetalscope-build/fetalscope-build/App/main.m -o /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/main.o
+2026-11-21T14:58:44.3729740Z 
+2026-11-21T14:58:44.3738760Z CompileC /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/RawMicEngine.o /Users/runner/work/fetalscope-build/fetalscope-build/App/RawMicEngine.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:44.3742300Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:44.3742940Z     
+2026-11-21T14:58:44.3745540Z     Using response file: /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+2026-11-21T14:58:44.3747070Z     
+2026-11-21T14:58:44.3758270Z     /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios15.0 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/RawMicEngine.d --serialize-diagnostics /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/RawMicEngine.dia -c /Users/runner/work/fetalscope-build/fetalscope-build/App/RawMicEngine.m -o /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/RawMicEngine.o
+2026-11-21T14:58:44.3920080Z /Users/runner/work/fetalscope-build/fetalscope-build/App/RawMicEngine.m:143:35: warning: variable length array folded to constant array as an extension [-Wgnu-folding-constant]
+2026-11-21T14:58:44.4023630Z   143 |     float               _waveform[kWaveformPoints];
+2026-11-21T14:58:44.4125810Z       |                                   ^~~~~~~~~~~~~~~
+2026-11-21T14:58:44.4252310Z 1 warning generated.
+2026-11-21T14:58:44.4354380Z 
+2026-11-21T14:58:44.4478770Z CompileC /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/MainViewController.o /Users/runner/work/fetalscope-build/fetalscope-build/App/MainViewController.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:44.4594150Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:44.4933710Z     
+2026-11-21T14:58:44.5007620Z     Using response file: /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+2026-11-21T14:58:44.5107240Z     
+2026-11-21T14:58:44.5236960Z     /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios15.0 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/MainViewController.d --serialize-diagnostics /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/MainViewController.dia -c /Users/runner/work/fetalscope-build/fetalscope-build/App/MainViewController.m -o /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/MainViewController.o
+2026-11-21T14:58:44.5577310Z 
+2026-11-21T14:58:44.5684060Z CompileC /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/AppDelegate.o /Users/runner/work/fetalscope-build/fetalscope-build/App/AppDelegate.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:44.5779150Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:44.5880980Z     
+2026-11-21T14:58:44.5985070Z     Using response file: /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+2026-11-21T14:58:44.6097440Z     
+2026-11-21T14:58:44.6210540Z     /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios15.0 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/AppDelegate.d --serialize-diagnostics /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/AppDelegate.dia -c /Users/runner/work/fetalscope-build/fetalscope-build/App/AppDelegate.m -o /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/AppDelegate.o
+2026-11-21T14:58:45.0772750Z 
+2026-11-21T14:58:45.0874080Z Ld /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app/FetalScope normal (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:45.0918690Z     cd /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:45.0942540Z     /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios15.0 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -Os -L/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos -F/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/BuildProductsPath/Release-iphoneos -filelist /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/FetalScope.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/FetalScope_lto.o -Xlinker -final_output -Xlinker /Applications/FetalScope.app/FetalScope -Xlinker -dependency_info -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/IntermediateBuildFilesPath/FetalScope.build/Release-iphoneos/FetalScope.build/Objects-normal/arm64/FetalScope_dependency_info.dat -fobjc-arc -fobjc-link-runtime -framework AudioToolbox -framework AVFoundation -framework Foundation -framework UIKit -o /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app/FetalScope
+2026-11-21T14:58:45.4750710Z Undefined symbols for architecture arm64:
+2026-11-21T14:58:45.4846390Z   "_CGContextAddLineToPoint", referenced from:
+2026-11-21T14:58:45.4858940Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4859630Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4860260Z   "_CGContextMoveToPoint", referenced from:
+2026-11-21T14:58:45.4861650Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4862190Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4862640Z   "_CGContextSetLineCap", referenced from:
+2026-11-21T14:58:45.4863870Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4866050Z   "_CGContextSetLineWidth", referenced from:
+2026-11-21T14:58:45.4867280Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4868300Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4869500Z   "_CGContextSetStrokeColorWithColor", referenced from:
+2026-11-21T14:58:45.4871310Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4877360Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4879090Z   "_CGContextStrokePath", referenced from:
+2026-11-21T14:58:45.4880470Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4881530Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4882660Z   "_CGRectGetHeight", referenced from:
+2026-11-21T14:58:45.4883900Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4885030Z   "_CGRectGetWidth", referenced from:
+2026-11-21T14:58:45.4887190Z       -[WaveView drawRect:] in MainViewController.o
+2026-11-21T14:58:45.4888500Z   "_OBJC_CLASS_$_CADisplayLink", referenced from:
+2026-11-21T14:58:45.4889620Z        in MainViewController.o
+2026-11-21T14:58:45.4891740Z ld: symbol(s) not found for architecture arm64
+2026-11-21T14:58:45.4893720Z /Users/runner/work/fetalscope-build/fetalscope-build/FetalScope.xcodeproj: FetalScope: clang: error: linker command failed with exit code 1 (use -v to see invocation)
+2026-11-21T14:58:45.4895650Z 
+2026-11-21T14:58:45.5009130Z ** ARCHIVE FAILED **
+2026-11-21T14:58:45.5009430Z 
+2026-11-21T14:58:45.5009820Z 
+2026-11-21T14:58:45.5010030Z The following build commands failed:
+2026-11-21T14:58:45.5021330Z 	Ld /Users/runner/Library/Developer/Xcode/DerivedData/FetalScope-hblvdvuucpkkefgtrockloltocpp/Build/Intermediates.noindex/ArchiveIntermediates/FetalScope/InstallationBuildProductsLocation/Applications/FetalScope.app/FetalScope normal (in target 'FetalScope' from project 'FetalScope')
+2026-11-21T14:58:45.5217410Z 	Archiving project FetalScope with scheme FetalScope
+2026-11-21T14:58:45.5217890Z (2 failures)
+2026-11-21T14:58:45.5565180Z ##[error]Process completed with exit code 65.
+2026-11-21T14:58:45.5828470Z Post job cleanup.
+2026-11-21T14:58:46.1023060Z [command]/opt/homebrew/bin/git version
+2026-11-21T14:58:46.2087650Z git version 2.56.1
+2026-11-21T14:58:46.2143850Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/1c661cfa-8036-42d2-ac5a-109c51045485/.gitconfig'
+2026-11-21T14:58:46.2164110Z Temporarily overriding HOME='/Users/runner/work/_temp/1c661cfa-8036-42d2-ac5a-109c51045485' before making global git config changes
+2026-11-21T14:58:46.2165620Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T14:58:46.2169930Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/fetalscope-build/fetalscope-build
+2026-11-21T14:58:46.2447420Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T14:58:46.2451050Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T14:58:46.4571200Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-21T14:58:46.4650350Z http.https://github.com/.extraheader
+2026-11-21T14:58:46.4749200Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-21T14:58:46.4750820Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-21T14:58:46.6723420Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T14:58:46.6825450Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T14:58:46.9994850Z Cleaning up orphan processes
+2026-11-21T14:58:47.2877430Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

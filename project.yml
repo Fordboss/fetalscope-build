@@ -34,5 +34,7 @@ targets:
     frameworks:
       - SDK: AudioToolbox.framework
       - SDK: AVFoundation.framework
+      - SDK: CoreGraphics.framework
+      - SDK: QuartzCore.framework
       - SDK: Foundation.framework
       - SDK: UIKit.framework
