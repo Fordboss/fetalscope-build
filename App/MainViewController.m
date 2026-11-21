@@ -70,7 +70,6 @@
 @property (nonatomic, strong) UIButton *startButton;
 @property (nonatomic, strong) UIButton *recButton;
 @property (nonatomic, strong) UISwitch *clipSwitch;
-@property (nonatomic, strong) UISwitch *hpSwitch;
 @property (nonatomic, strong) UILabel *levelLabel;
 @property (nonatomic, strong) UILabel *diagLabel;
 @property (nonatomic, strong) UIButton *inputButton;
@@ -199,10 +198,15 @@
               forControlEvents:UIControlEventValueChanged];
     self.clipSwitch.on = YES;
 
-    self.hpSwitch = [self addSwitchRow:@"高通滤波（压低频轰鸣）" on:NO y:&y pad:pad w:w];
-    [self.hpSwitch addTarget:self action:@selector(hpToggled:)
-            forControlEvents:UIControlEventValueChanged];
-    self.hpSwitch.on = NO;
+    // 说明：这里本来有个「高通滤波」开关，已移除。
+    // 用户要的是不滤波的原始声音，留个可开的滤波开关就是隐患。
+    // 信号链现在只有：麦克风 → ×增益 → 软限幅 → 耳机。
+    UILabel *noFilter = [[UILabel alloc] initWithFrame:CGRectMake(pad, y, w, 20)];
+    noFilter.text = @"无滤波器：信号只做放大";
+    noFilter.font = [UIFont systemFontOfSize:12 weight:UIFontWeightRegular];
+    noFilter.textColor = [UIColor colorWithWhite:0.45 alpha:1];
+    [self.scrollView addSubview:noFilter];
+    y += 20;
 
     y += 6;
 
@@ -327,7 +331,6 @@
 }
 
 - (void)clipToggled:(UISwitch *)sw { RawMicEngine.shared.softClip = sw.isOn; }
-- (void)hpToggled:(UISwitch *)sw   { RawMicEngine.shared.highPass = sw.isOn; }
 
 - (void)startTapped {
     RawMicEngine *e = RawMicEngine.shared;

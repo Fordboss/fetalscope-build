@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///   3. 实时监听（耳机），带软限幅防削顶爆音
 ///   4. 录音写的是【增益之前】的原始样本，保证「原始声音」可回溯
 ///   5. 音频回调里只做浮点运算 + fwrite，绝不 seek / flush / 建对象以外的重活
+///   6. 【没有任何滤波器】—— 高通/低通/陷波一律不提供，信号链只有增益和限幅
 @interface RawMicEngine : NSObject
 
 + (instancetype)shared;
@@ -31,9 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) float outputVolume;
 /// 软限幅：开=好听不爆音，关=绝对原始但会削顶
 @property (nonatomic, assign) BOOL softClip;
-/// 可选高通（默认关，因为用户要求「不处理」）。只用来压手抖低频轰鸣
-@property (nonatomic, assign) BOOL highPass;
-@property (nonatomic, assign) float highPassHz;
+
+// ★ 不再提供任何滤波器。
+//   曾经的「高通滤波」已彻底移除 —— 用户要的是不滤波的原始声音，
+//   留一个可开的滤波开关本身就是隐患（手滑开了就以为听到的是原始信号）。
+//   信号链现在是：麦克风 → ×增益 → 软限幅 → 耳机。仅此而已。
 
 @property (nonatomic, readonly) BOOL isRunning;
 @property (nonatomic, readonly) BOOL isRecording;

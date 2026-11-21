@@ -87,31 +87,6 @@ static NSUInteger RingRead(RingBuffer *r, float *dst, NSUInteger maxN) {
     return n;
 }
 
-#pragma mark - 一阶高通（可选，默认关）
-
-typedef struct {
-    float a;
-    float prevIn;
-    float prevOut;
-    BOOL  enabled;
-} HighPass;
-
-static void HPReset(HighPass *hp, double sr, double hz) {
-    if (hz <= 0 || sr <= 0) { hp->a = 0; hp->prevIn = 0; hp->prevOut = 0; return; }
-    double rc = 1.0 / (2.0 * M_PI * hz);
-    double dt = 1.0 / sr;
-    hp->a = (float)(rc / (rc + dt));
-    hp->prevIn = 0;
-    hp->prevOut = 0;
-}
-
-static inline float HPProcess(HighPass *hp, float x) {
-    float y = hp->a * (hp->prevOut + x - hp->prevIn);
-    hp->prevIn = x;
-    hp->prevOut = y;
-    return y;
-}
-
 #pragma mark - 引擎
 
 @interface RawMicEngine () {
@@ -119,7 +94,6 @@ static inline float HPProcess(HighPass *hp, float x) {
     AVAudioInputNode    *_input;
     AVAudioPlayerNode   *_player;
     RingBuffer          _ring;
-    HighPass            _hp;
 
     dispatch_queue_t    _consumerQueue;
     dispatch_source_t   _consumerTimer;
@@ -180,8 +154,6 @@ static inline float HPProcess(HighPass *hp, float x) {
         _inputGain = 1.0f;
         _outputVolume = 0.7f;
         _softClip = YES;
-        _highPass = NO;
-        _highPassHz = 120.0f;
         _consumerQueue = dispatch_queue_create("com.wb.fetalscope.consumer", DISPATCH_QUEUE_SERIAL);
         memset(_waveform, 0, sizeof(_waveform));
         _monoScratch = (float *)calloc(kMonoScratch, sizeof(float));
@@ -292,8 +264,6 @@ static inline float HPProcess(HighPass *hp, float x) {
     self.currentOutputName = session.currentRoute.outputs.firstObject.portName ?: @"无";
 
     RingInit(&_ring, (NSUInteger)(inFormat.sampleRate * kRingSeconds) + 1024);
-    HPReset(&_hp, inFormat.sampleRate, self.highPassHz);
-    _hp.enabled = self.highPass;
 
     // 播放节点
     _player = [[AVAudioPlayerNode alloc] init];
@@ -373,8 +343,8 @@ static inline float HPProcess(HighPass *hp, float x) {
     self.droppedBuffers = 0;
     [self startConsumer];
 
-    elog(@"已启动 gain=%.1fx vol=%.2f clip=%d hp=%d",
-         self.inputGain, self.outputVolume, self.softClip, self.highPass);
+    elog(@"已启动 gain=%.1fx vol=%.2f clip=%d（无任何滤波）",
+         self.inputGain, self.outputVolume, self.softClip);
     return YES;
 }
 
@@ -415,12 +385,11 @@ static inline float HPProcess(HighPass *hp, float x) {
         _rawFrames += m;
     }
 
-    // 播放：增益 → 高通 → 限幅
+    // 播放：增益 → 限幅。没有滤波器，这是用户明确要求的信号链
     float peakOut = 0;
     BOOL clipped = NO;
     for (NSUInteger i = 0; i < got; i++) {
         float s = _consumeBuf[i];
-        if (_hp.enabled) s = HPProcess(&_hp, s);
         s *= gain;
         if (self.softClip) {
             // x/sqrt(1+x²) 是 tanh 的快速近似：小信号近似线性，大信号平滑压缩
@@ -617,16 +586,6 @@ static inline float HPProcess(HighPass *hp, float x) {
     if (_engine) _engine.mainMixerNode.outputVolume = v;
 }
 
-- (void)setHighPass:(BOOL)on {
-    _highPass = on;
-    _hp.enabled = on;
-    if (on) HPReset(&_hp, _actualSampleRate, _highPassHz);
-}
-
-- (void)setHighPassHz:(float)hz {
-    _highPassHz = hz;
-    if (_highPass) HPReset(&_hp, _actualSampleRate, hz);
-}
 
 #pragma mark - 日志
 
