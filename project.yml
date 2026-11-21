@@ -1,0 +1,38 @@
+name: FetalScope
+
+options:
+  bundleIdPrefix: com.wb
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+
+settings:
+  PRODUCT_NAME: FetalScope
+  MARKETING_VERSION: "1.0"
+  CURRENT_PROJECT_VERSION: "1"
+  IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+  TARGETED_DEVICE_FAMILY: "1"
+  CODE_SIGN_STYLE: Manual
+  CODE_SIGN_IDENTITY: "-"
+  CODE_SIGNING_REQUIRED: "NO"
+  CODE_SIGNING_ALLOWED: "NO"
+  GENERATE_INFOPLIST_FILE: "NO"
+  CLANG_ENABLE_MODULES: "NO"
+  CLANG_ENABLE_OBJC_ARC: "YES"
+  SDKROOT: iphoneos
+
+targets:
+  FetalScope:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    settings:
+      INFOPLIST_FILE: App/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.wb.fetalscope
+      CODE_SIGN_ENTITLEMENTS: App/App.entitlements
+    frameworks:
+      - SDK: AudioToolbox.framework
+      - SDK: AVFoundation.framework
+      - SDK: Foundation.framework
+      - SDK: UIKit.framework

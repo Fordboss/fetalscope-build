@@ -1,0 +1,56 @@
+name: 编译 胎心监听 App
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 安装 XcodeGen
+        run: brew install xcodegen
+
+      - name: 生成工程
+        run: xcodegen generate --spec project.yml
+
+      - name: 编译（不签名）
+        run: |
+          xcodebuild clean archive \
+            -project FetalScope.xcodeproj \
+            -scheme FetalScope \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$PWD/build/FetalScope.xcarchive" \
+            CODE_SIGNING_ALLOWED=NO \
+            CLANG_ENABLE_MODULES=NO \
+            OTHER_LDFLAGS='-framework AudioToolbox -framework AVFoundation -framework Foundation -framework UIKit'
+
+      - name: 打包 + ad-hoc 签名
+        run: |
+          mkdir -p build/Payload
+          APP=$(find "$PWD/build/FetalScope.xcarchive/Products/Applications" -maxdepth 1 -name "*.app" -print -quit)
+          echo "找到 App: $APP"
+          cp -R "$APP" build/Payload/
+          APPNAME=$(basename "$APP")
+          codesign --force --deep --sign - --timestamp=none \
+            --entitlements App/App.entitlements \
+            "build/Payload/$APPNAME"
+          echo "=== 签名 ==="
+          codesign -dv "build/Payload/$APPNAME" 2>&1 | head -20 || true
+          echo "=== 嵌入的 entitlements ==="
+          codesign -d --entitlements :- "build/Payload/$APPNAME" 2>/dev/null || echo "(读取失败)"
+          cd build && zip -qry FetalScope.ipa Payload
+          ls -lh FetalScope.ipa
+
+      - name: 上传 IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: FetalScope-IPA
+          path: build/FetalScope.ipa
+          if-no-files-found: error
+          retention-days: 30
